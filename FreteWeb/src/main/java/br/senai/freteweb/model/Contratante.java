@@ -7,8 +7,8 @@ package br.senai.freteweb.model;
 
 /**
  *
- * @author elton
+ * @author Ricardo
  */
-public class Distribuidor {
+public class Contratante {
     
 }
