@@ -10,7 +10,34 @@
         <link rel="stylesheet" href="webjars/bootstrap/3.3.5/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <div class="container" data-ui-view>
+        <div class="container">
+            <div>
+                <span uib-dropdown>
+                    <a href id="simple-dropdown" uib-dropdown-toggle>
+                        Sou Motorista
+                    </a>
+                    <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
+                        <li>
+                            <a href>Cadastrar</a>
+                        </li>
+                        <li>
+                            <a href>Procurar fretes</a>
+                        </li>
+                    </ul>
+                </span>
+                <span uib-dropdown>
+                    <a href id="simple-dropdown" uib-dropdown-toggle>
+                        Quero um motorista 
+                    </a>
+                    <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
+                        <li>
+                            <a href>Procurar</a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            <div data-ui-view>
+            </div>
         </div>
         <script src="webjars/jquery/2.1.4/dist/jquery.js"></script>
         <script src="webjars/bootstrap/3.3.5/dist/js/bootstrap.js"></script>
