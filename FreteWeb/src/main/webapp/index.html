@@ -12,16 +12,16 @@
     <body>
         <div class="container">
             <div>
+                <a href id="simple-dropdown" uib-dropdown-toggle>
+                    <a data-ui-sref="home">Inicio</a>
+                </a>
                 <span uib-dropdown>
                     <a href id="simple-dropdown" uib-dropdown-toggle>
                         Sou Motorista
                     </a>
                     <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
                         <li>
-                            <a href>Cadastrar</a>
-                        </li>
-                        <li>
-                            <a href>Procurar fretes</a>
+                            <a data-ui-sref="Motorista">Cadastrar</a>
                         </li>
                     </ul>
                 </span>
@@ -31,7 +31,7 @@
                     </a>
                     <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
                         <li>
-                            <a href>Procurar</a>
+                            <a data-ui-sref="buscarMotorista">Buscar um Motorista</a>
                         </li>
                     </ul>
                 </span>
@@ -48,5 +48,8 @@
         <script src="webjars/angularjs-rails-resource/1.2.3/angularjs-rails-resource.js"></script>
         <script src="js/app.js"></script>
         <script src="js/home.js"></script>
+        <script src="js/adicionarMotorista.js"></script>
+        <script src="js/buscarMotorista.js"></script>
+        <script src="models/motorista.js"></script>
     </body>
 </html>

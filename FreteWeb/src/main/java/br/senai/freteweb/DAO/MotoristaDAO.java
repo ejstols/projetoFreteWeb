@@ -44,5 +44,12 @@ public class MotoristaDAO {
             + "From Motorista m Order by m.nome", Motorista.class);
                     
         return q.getResultList();
-    }        
+    } 
+    
+    public List<Motorista> buscarPorNome(String nome){
+        TypedQuery<Motorista> q = em.createQuery("Select m "
+            + "From Motorista m where m.nome = " + nome, Motorista.class);
+        
+        return q.getResultList();
+    } 
 }
