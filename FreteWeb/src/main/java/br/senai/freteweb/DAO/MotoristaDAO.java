@@ -44,5 +44,5 @@ public class MotoristaDAO {
             + "From Motorista m Order by m.nome", Motorista.class);
                     
         return q.getResultList();
-    }
+    }        
 }
