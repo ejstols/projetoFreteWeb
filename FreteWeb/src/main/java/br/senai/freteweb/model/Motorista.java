@@ -31,7 +31,7 @@ public class Motorista {
     private String      nome;
     
     @Column(name="inscricao", nullable = false, length = 11)
-    private Integer     inscricao;
+    private String     inscricao;
     
     @Column(name="email", nullable = true, length = 100)
     private String      email;
@@ -42,8 +42,8 @@ public class Motorista {
     @Column(name="cidade", nullable = false, length = 100)
     private String      cidade;
     
-    @Column(name="cep", nullable = false, length = 100)
-    private Integer     cep;
+    @Column(name="cep", nullable = false, length = 8)
+    private String     cep;
     
     @Column(name="estado", nullable = false, length = 100)
     private String      estado;
@@ -64,11 +64,11 @@ public class Motorista {
         this.nome = nome;
     }
 
-    public Integer getInscricao() {
+    public String getInscricao() {
         return inscricao;
     }
 
-    public void setInscricao(Integer inscricao) {
+    public void setInscricao(String inscricao) {
         this.inscricao = inscricao;
     }
 
@@ -96,11 +96,11 @@ public class Motorista {
         this.cidade = cidade;
     }
 
-    public Integer getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(Integer cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 

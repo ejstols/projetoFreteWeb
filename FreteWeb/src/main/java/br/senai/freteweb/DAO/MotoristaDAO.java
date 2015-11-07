@@ -40,7 +40,7 @@ public class MotoristaDAO {
     }
     
     public List<Motorista> listar(){
-        TypedQuery<Motorista> q = em.createQuery("Select m"
+        TypedQuery<Motorista> q = em.createQuery("Select m "
             + "From Motorista m Order by m.nome", Motorista.class);
                     
         return q.getResultList();
