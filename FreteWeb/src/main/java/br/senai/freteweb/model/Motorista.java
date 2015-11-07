@@ -25,7 +25,7 @@ public class Motorista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer     Id;
+    private Long     Id;
     
     @Column(name="nome", nullable = false, length = 100)
     private String      nome;
@@ -48,11 +48,11 @@ public class Motorista {
     @Column(name="estado", nullable = false, length = 100)
     private String      estado;
 
-    public Integer getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(Integer Id) {
+    public void setId(Long Id) {
         this.Id = Id;
     }
 
