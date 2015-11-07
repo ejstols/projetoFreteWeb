@@ -65,6 +65,8 @@ public class MotoristaResource {
         return motoristaDAO.atualizar(m);
     }
     
+    @GET
+    @Path("{id}")    
     public Response buscar(@PathParam("id") Long id){
         final Motorista m = motoristaDAO.buscar(id);
         if(m == null){
