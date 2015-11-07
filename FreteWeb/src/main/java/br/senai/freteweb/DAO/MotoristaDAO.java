@@ -13,10 +13,10 @@ import javax.persistence.PersistenceContext;
  *
  * @author Ricardo
  */
-//@Stateless 
+@Stateless 
 public class MotoristaDAO {
     
-  //  @PersistenceContext(unitName = "freteWebPU")
-  //  private EntityManager em;
+    @PersistenceContext(unitName = "freteWebPU")
+    private EntityManager em;
     
 }
