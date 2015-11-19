@@ -1,10 +1,20 @@
 'use strict';
 
-function BuscaMotoristaController($scope) {
-    $scope.buscaMotorista = {};
-   
+function BuscaMotoristaController($scope, MotoristaModel) {
+    
     $scope.buscar = function () {
-        $scope.nome;
+        MotoristaModel.query().then(function (data) {
+            $scope.lista = data;
+            $scope.msg = 'Busca';
+        }, function (error) {
+            console.log('error', error);
+            alert(error.data);
+        });
+        
+    }
+    
+    $scope.setMsg = function(){
+        $scope.msg = 'Busca';
     }
 }
     
