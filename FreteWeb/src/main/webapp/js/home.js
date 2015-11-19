@@ -1,7 +1,17 @@
 'use strict';
 
-function HomeController($scope) {
-    $scope.mensagem = 'Teste';
+function HomeController($scope, MotoristaModel) {
+    //$scope.mensagem = 'Teste';
+     $scope.buscarMotorista = function () {
+        MotoristaModel.query().then(function (data) {
+            $scope.lista = data;
+            $scope.msg = 'busca';
+        }, function (error) {
+            console.log('error', error);
+            alert(error.data);
+        });
+        
+    }
 }
 function HomeRoute($stateProvider) {
     $stateProvider.state('home', {

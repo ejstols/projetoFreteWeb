@@ -1,10 +1,23 @@
+<style>
+    .nomeCampo{
+        text-align: left;
+        margin-top: 1px;
+    }
+    .campos{
+        margin-left: 10px;
+    }
+</style>
 <h3>Formulario para adicionar motorista</h3>
-<input class="form-control" type="text" ng-model="motorista.nome"  placeholder="Nome"    />
-<input class="form-control" type="text" ng-model="motorista.email" placeholder="Email"     />
-<input class="form-control" type="text" ng-model="motorista.cep" placeholder="CEP"      />
+  <div class="nomeCampo" >
+      Nome: <div class="campos"> <input  type="text" ng-model="motorista.nome"  placeholder="Nome"    /> </div>
+  </div>   
+<div class="nomeCampo" >
+    Email: <div class="campos"><input  type="text" ng-model="motorista.email" placeholder="Email"     /></div>
+</div>
+  <input class="form-control" type="text" ng-model="motorista.cep" placeholder="CEP"      />
 <input class="form-control" type="text" ng-model="motorista.cidade" placeholder="Cidade"   />
 <input class="form-control" type="text" ng-model="motorista.endereco" placeholder="Endereço"  />
 <input class="form-control" type="text" ng-model="motorista.estado"  placeholder="UF"  />
 <input class="form-control" type="text" ng-model="motorista.inscricao" placeholder="Inscrição" />
-<button class="btn btn-primary btn-block" ng-click="gravar()">Gravar</button>
+<button class="btn btn-primary btn-primary" ng-click="gravar()">Gravar</button>
 
