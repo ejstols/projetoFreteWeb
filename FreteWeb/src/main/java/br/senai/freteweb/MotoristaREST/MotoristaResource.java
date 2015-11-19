@@ -46,8 +46,13 @@ public class MotoristaResource {
     }
     
     @GET
-    public List<Motorista> listar(){
-        return motoristaDAO.listar();
+    public List<Motorista> listar(@QueryParam("cidade") String cidade){
+        if (cidade == null) {
+          return motoristaDAO.listar();
+        }
+        else{
+            return motoristaDAO.buscarPorCidade(cidade);
+        }
     }
     
     @DELETE

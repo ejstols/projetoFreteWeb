@@ -51,5 +51,12 @@ public class MotoristaDAO {
             + "From Motorista m where m.nome = " + nome, Motorista.class);
         
         return q.getResultList();
+    }
+    
+    public List<Motorista> buscarPorCidade(String cidade){
+        TypedQuery<Motorista> q = em.createQuery("Select m "
+            + "From Motorista m where m.cidade = " + cidade, Motorista.class);
+        
+        return q.getResultList();
     } 
 }
