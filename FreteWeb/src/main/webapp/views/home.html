@@ -1,16 +1,31 @@
+
 <style>
-    .jumbtron{
-        width: 200px;
-        height: 500px;
+    #formTodo{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        background-color: yellow;
+        
+    }
+    #formLista{
+        position: relative;
         margin-top: 5px;
+        width: 200px;
+        float: left;
+        background-color: red;
+    }
+    .jumbotron{
+        width: auto;
+        height: 200px;
+        margin-top: 10px;
         margin-bottom: 10px;
         margin-left: 5px;
         margin-right: 5px;
         font-family: Arial;
-        background-color: yellowgreen;
+        
     }
     .form_control{
-        margin-top: 5px;
+        margin-top: 1px;
         margin-left: 3px;
         margin-bottom: 3px;
         appearance: field;
@@ -25,11 +40,62 @@
         margin-right: 5px;
         margin-top: 20px;
     }
+    .input-group{
+        margin-top: 2px;
+    }
+    .table-striped {
+            position: relative;
+            margin-right: auto;
+            text-align: left;
+            float: left;
+    }
 </style>
-<div class="jumbtron">
-    <p class="form-control"> Buscar serviço de frete </p>
-    Cidade:
-    <input class="form_control" type="text" ng-model="cidade"/>
-    <button class="btn btn-primary"  ng-click="buscarMotorista()">Buscar m</button>
+
+<div class="container">
+    <div class="jumbotron">
+        
+        <h3>Buscar frete: </h3>
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="nomeCidade" placeholder="buscar pela cidade...">
+          <span class="input-group-btn">
+              <button class="btn btn-info glyphicon glyphicon-search" ng-click="buscar()"  type="button"></button>
+          </span>
+        </div>
+        
+    </div>
+    <div>
+        <!-- <button class="btn" ng-click="editar(MotoristaModel)">Editar</button> -->
+        <table class="table table-striped">
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Email</th>
+                <th>Cidade</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="MotoristaModel in lista">
+               
+                  <td>{{MotoristaModel.nome}}</td>
+                  <td>{{MotoristaModel.endereco}}</td>
+                  <td>{{MotoristaModel.email}}</td>
+                  <td>{{MotoristaModel.cidade}}</td>
+                
+                  <td><button class="btn" ng-click="editar(MotoristaModel)">Editar</button></td>
+                  <td><button class="btn" ng-click="deletar(MotoristaModel)">Deletar</button></td>
+               
+            </tr>
+            
+        </table>
+    </div>   
 </div>
 
+
+<!--
+<div class="jumbtron">
+    <p class="form-control"> Buscar serviço de frete </p>
+    <input class="form_control" type="text" ng-model="cidade" placeholder="Buscar pela cidade"/>
+    <button class="btn btn-primary"  ng-click="buscarMotorista()">Buscar m</button>
+</div>
+>
+-->
