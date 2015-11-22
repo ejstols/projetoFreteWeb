@@ -2,15 +2,25 @@
 
 function HomeController($scope, MotoristaModel) {
     //$scope.mensagem = 'Teste';
-     $scope.buscarMotorista = function () {
-        MotoristaModel.query().then(function (data) {
-            $scope.lista = data;
-            $scope.msg = 'busca';
-        }, function (error) {
-            console.log('error', error);
-            alert(error.data);
-        });
-        
+    $scope.buscar = function () {
+        if ($scope.nomeCidade == '' || $scope.nomeCidade == null)
+        { 
+            MotoristaModel.query().then(function (data) {
+                 $scope.lista = data;
+                 $scope.msg = 'Busca';
+             }, function (error) {
+                 console.log('error', error);
+                 alert(error.data);
+             });
+        }else {
+                MotoristaModel.query({cidade:"'"+$scope.nomeCidade+"'"}).then(function (data) {
+                 $scope.lista = data;
+                 $scope.msg = 'Busca';
+             }, function (error) {
+                 console.log('error', error);
+                 alert(error.data);
+             });    
+         }    
     }
 }
 function HomeRoute($stateProvider) {

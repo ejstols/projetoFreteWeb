@@ -1,26 +1,49 @@
 'use strict';
 
-function BuscaMotoristaController($scope, MotoristaModel) {
+
+function BuscaMotoristaController($scope, MotoristaModel, $rootScope, $location) {
     
     $scope.buscar = function () {
-        MotoristaModel.query().then(function (data) {
-            $scope.lista = data;
-            $scope.msg = 'Busca';
+        if ($scope.cidade == '' || $scope.cidade == null)
+        { 
+            MotoristaModel.query().then(function (data) {
+                 $scope.lista = data;
+                 $scope.msg = 'Busca';
+             }, function (error) {
+                 console.log('error', error);
+                 alert(error.data);
+             });
+        }else {
+                MotoristaModel.query({cidade:"'"+$scope.cidade+"'"}).then(function (data) {
+                 $scope.lista = data;
+                 $scope.msg = 'Busca';
+             }, function (error) {
+                 console.log('error', error);
+                 alert(error.data);
+             });    
+         }    
+    }
+    
+    $scope.editar = function (MotoristaModel) {
+        $rootScope.motorista = angular.copy(MotoristaModel);
+        $location.path("/editarmotorista");
+    };
+
+
+    $scope.deletar = function (MotoristaModel) {
+        MotoristaModel.remove().then(function () {
+            $scope.buscar();
         }, function (error) {
             console.log('error', error);
             alert(error.data);
         });
-        
-    }
+    };    
     
-    $scope.setMsg = function(){
-        $scope.msg = 'Busca';
-    }
 }
     
 function buscaMotoristaRoute($stateProvider) {
     $stateProvider.state('buscarMotorista', {
-        url: '/buscarMotorista',
+        url: '/eitarMotorista',
         templateUrl: 'views/buscarMotorista.html',
         controller: 'BuscaMotoristaController'
     });
