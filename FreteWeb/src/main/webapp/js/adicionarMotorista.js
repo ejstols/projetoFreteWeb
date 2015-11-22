@@ -3,7 +3,7 @@
 function MotoristaController($scope, MotoristaModel,$rootScope,$location) {
     
     $scope.limpar = function () {
-        $scope.msg = "lll";
+        
         $scope.motorista = {};
         $rootScope.motorista = {};
     };    
@@ -31,6 +31,7 @@ function MotoristaController($scope, MotoristaModel,$rootScope,$location) {
            
             $location.path("/");
     };
+    
     $scope.limpar();
 }
     

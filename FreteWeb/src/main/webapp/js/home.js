@@ -23,7 +23,8 @@ function HomeController($scope, MotoristaModel,$rootScope,$location) {
     
     $scope.editar = function (MotoristaModel) {
         
-        $rootScope.motorista = angular.copy(MotoristaModel);
+        $rootScope.motoristaEditar = angular.copy(MotoristaModel);
+        $rootScope.editando = true;
         $location.path("/editarmotorista");
     };
     $scope.deletar = function (MotoristaModel) {
