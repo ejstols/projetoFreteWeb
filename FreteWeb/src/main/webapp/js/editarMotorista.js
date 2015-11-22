@@ -1,6 +1,6 @@
 'use strict';
 
-function EditarMotoristaController($scope, MotoristaModel) {
+function EditarMotoristaController($scope, MotoristaModel,$rootScope,$location) {
     
     $scope.limpar = function () {
         $scope.motorista = {};
@@ -26,7 +26,7 @@ function EditarMotoristaController($scope, MotoristaModel) {
             }
             
             $scope.limpar();
-            $location.path("/buscarMotorista");
+            $location.path("/");
             //$rootScope.motorista = {}
     };
 }
