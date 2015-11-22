@@ -4,6 +4,7 @@ function EditarMotoristaController($scope, MotoristaModel,$rootScope,$location) 
     
     $scope.limpar = function () {
         $scope.motorista = {};
+        $rootScope.motorista = {};
     };    
         
     $scope.gravar = function () {

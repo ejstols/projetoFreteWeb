@@ -1,9 +1,11 @@
 'use strict';
 
-function MotoristaController($scope, MotoristaModel) {
+function MotoristaController($scope, MotoristaModel,$rootScope,$location) {
     
     $scope.limpar = function () {
+        $scope.msg = "lll";
         $scope.motorista = {};
+        $rootScope.motorista = {};
     };    
         
     $scope.gravar = function () {
@@ -16,6 +18,7 @@ function MotoristaController($scope, MotoristaModel) {
                     alert(error.data);
                 });
             } else {
+                
                 new MotoristaModel($scope.motorista).create()
                         .then(function () {
                             $scope.limpar();                   
@@ -25,8 +28,10 @@ function MotoristaController($scope, MotoristaModel) {
                         });
             }
             
-            $scope.limpar();
+           
+            $location.path("/");
     };
+    $scope.limpar();
 }
     
 function MotoristaRoute($stateProvider) {

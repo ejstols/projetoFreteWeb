@@ -7,7 +7,6 @@ function HomeController($scope, MotoristaModel,$rootScope,$location) {
         { 
             MotoristaModel.query().then(function (data) {
                  $scope.lista = data;
-                 $scope.msg = 'Busca';
              }, function (error) {
                  console.log('error', error);
                  alert(error.data);
@@ -15,7 +14,6 @@ function HomeController($scope, MotoristaModel,$rootScope,$location) {
         }else {
                 MotoristaModel.query({cidade:"'"+$scope.nomeCidade+"'"}).then(function (data) {
                  $scope.lista = data;
-                 $scope.msg = 'Busca';
              }, function (error) {
                  console.log('error', error);
                  alert(error.data);
@@ -28,6 +26,14 @@ function HomeController($scope, MotoristaModel,$rootScope,$location) {
         $rootScope.motorista = angular.copy(MotoristaModel);
         $location.path("/editarmotorista");
     };
+    $scope.deletar = function (MotoristaModel) {
+        MotoristaModel.remove().then(function () {
+            $scope.buscar();
+        }, function (error) {
+            console.log('error', error);
+            alert(error.data);
+        });
+    }; 
 }
 function HomeRoute($stateProvider) {
     $stateProvider.state('home', {

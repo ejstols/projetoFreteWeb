@@ -1,10 +1,58 @@
-<h3>Formulario para editar motorista</h3>  
-<input class="form-control"  type="text" ng-model="motorista.nome"  placeholder="Nome"    /> 
-<input class="form-control"  type="text" ng-model="motorista.email" placeholder="Email"     />
-<input class="form-control" type="text" ng-model="motorista.cep" placeholder="CEP"      />
-<input class="form-control" type="text" ng-model="motorista.cidade" placeholder="Cidade"   />
-<input class="form-control" type="text" ng-model="motorista.endereco" placeholder="Endereço"  />
-<input class="form-control" type="text" ng-model="motorista.estado"  placeholder="UF"  />
-<input class="form-control" type="text" ng-model="motorista.inscricao" placeholder="Inscrição" />
-<button class="btn btn-primary form-control" ng-click="gravar()">Gravar</button>
+<style>
+    .jumbotron{
+        width: auto;
+        margin-top: 10px;
+        margin-right: 5px;
+        font-family: Arial;
+    }
+    .form-control{
+        margin-left: 5px;
+        margin-top: 1px;
+        width: 250px;
+    }
+    .Tabtexto{
+        margin-left: 5px;
+        position: relative;
+    }
+    
+        
+</style>
+<div class="container">
+    <div class="jumbotron"> 
+        <h4>Alterar dados de motorista</h4>  
+        <table>
+            <tr>
+              <td>Nome: </td>
+              <td><input class="form-control" type="text"  ng-model="motorista.nome"  placeholder="Nome ou razão social"        /> </td>
+            
+            </tr>
+            <tr>
+                <td class="Tabtexto">E-mail: </td>
+                <td><input class="form-control"  type="text" ng-model="motorista.email" placeholder="Email"    /></td>
+            </tr>
+            <tr>
+              <td>Endereço:</td>
+              <td><input class="form-control" width="100px" type="text" ng-model="motorista.endereco" placeholder="Endereço"  /></td>
+              
+            </tr>
+            <tr>
+              <td>CEP: </td>
+              <td><input class="form-control"  type="text" ng-model="motorista.cep" placeholder="CEP"    /></td>
+            </tr>
+            <tr>
+               <td>Cidade:</td>
+               <td><input class="form-control" type="text" ng-model="motorista.cidade" placeholder="Cidade"      /></td>
+            </tr>
+            <tr>
+              <td>UF:</td>
+              <td><input class="form-control" type="text" ng-model="motorista.estado" placeholder="Endereço"  /></td>
+            </tr>
+            <tr>
+              <td>Inscrição:</td>
+              <td><input class="form-control" type="text" ng-model="motorista.inscricao" placeholder="CPF ou CNPJ"  /></td>
+            </tr>
+        </table>
 
+        <button class="btn btn-primary " ng-click="gravar()">Gravar</button>
+   </div> 
+</div>
