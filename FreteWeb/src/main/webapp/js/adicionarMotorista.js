@@ -8,27 +8,25 @@ function MotoristaController($scope, MotoristaModel,$rootScope, $location) {
     };    
         
     $scope.gravar = function () {
+                        
+                if ($scope.motorista.id) {
+                    $scope.motorista.update().then(function () {
+                        $scope.limpar();
+                    }, function (error) {
+                        console.log('error', error);
+                        alert(error.data);
+                    });
+                } else {
+                    new MotoristaModel($scope.motorista).create()
+                            .then(function () {
+                                $scope.limpar();                   
+                            }, function (error) {
+                                console.log('error', error);
+                                alert(error.data);
+                            });
+                }           
            
-            if ($scope.motorista.id) {
-                $scope.motorista.update().then(function () {
-                    $scope.limpar();
-                }, function (error) {
-                    console.log('error', error);
-                    alert(error.data);
-                });
-            } else {
-                
-                new MotoristaModel($scope.motorista).create()
-                        .then(function () {
-                            $scope.limpar();                   
-                        }, function (error) {
-                            console.log('error', error);
-                            alert(error.data);
-                        });
-            }
-            
-           
-            $location.path("/");
+            $location.path("/");                  
     };
     
     $scope.limpar();
