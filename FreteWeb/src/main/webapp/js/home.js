@@ -1,6 +1,6 @@
 'use strict';
 
-function HomeController($scope, MotoristaModel) {
+function HomeController($scope, MotoristaModel,$rootScope,$location) {
     //$scope.mensagem = 'Teste';
     $scope.buscar = function () {
         if ($scope.nomeCidade == '' || $scope.nomeCidade == null)
@@ -21,7 +21,13 @@ function HomeController($scope, MotoristaModel) {
                  alert(error.data);
              });    
          }    
-    }
+    };
+    
+    $scope.editar = function (MotoristaModel) {
+        
+        $rootScope.motorista = angular.copy(MotoristaModel);
+        $location.path("/editarmotorista");
+    };
 }
 function HomeRoute($stateProvider) {
     $stateProvider.state('home', {
