@@ -8,7 +8,8 @@ function EditarMotoristaController($scope, MotoristaModel,$rootScope,$location) 
     };    
         
     $scope.gravar = function () {
-           
+            $scope.motorista = $rootScope.motoristaEditar;
+            
             if ($scope.motorista.id) {
                 $scope.motorista.update().then(function () {
                     $scope.limpar();
