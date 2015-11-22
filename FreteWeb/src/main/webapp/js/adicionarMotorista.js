@@ -1,11 +1,10 @@
 'use strict';
 
-function MotoristaController($scope, MotoristaModel,$rootScope,$location) {
-    
-    $scope.limpar = function () {
-        
-        $scope.motorista = {};
+function MotoristaController($scope, MotoristaModel,$rootScope, $location) {
+            
+    $scope.limpar = function () {        
         $rootScope.motorista = {};
+        $scope.motorista = {};        
     };    
         
     $scope.gravar = function () {
